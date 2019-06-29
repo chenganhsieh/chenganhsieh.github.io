@@ -147,6 +147,7 @@ header.masthead h2 {
 .skill-img {
     width: 25%;
     height: auto;
+    max-height: 100%;
     padding: 0rem 3rem;
 }
 
