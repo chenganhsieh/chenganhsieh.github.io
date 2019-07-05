@@ -10,8 +10,11 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 firebase.database.enableLogging(true);
-
+signup.innerHTML = "註冊"
+$("#signup").attr("disabled", false);
 $("#signup").on('click', function(e) {
+    signup.innerHTML = "請稍後..."
+    $("#signup").attr("disabled", true);
     e.preventDefault();
 
     var email = $("#inputEmail").val()
@@ -130,6 +133,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 
                         })
                         .then(function() {
+                            signup.innerHTML = "註冊"
+                            $("#signup").attr("disabled", false);
                             alert("帳戶建立成功!");
                             window.location.href = './main.html'
                         })

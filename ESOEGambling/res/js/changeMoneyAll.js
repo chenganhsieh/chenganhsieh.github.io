@@ -1,7 +1,6 @@
 var db = firebase.firestore();
 firebase.database.enableLogging(true);
-var activityID = localStorage.getItem("activityID");
-var actID = parseInt(activityID)
+
 var groupID = []
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -9,8 +8,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             alert("你不是關主!");
             window.location.href = './main.html'
         } else {
-            closeChange.innerHTML = "結束"
-            db.collection("Users").where("activityID", "==", actID)
+            db.collection("Users").where("free", "==", 0)
                 .onSnapshot(function(querySnapshot) {
                     var list = document.getElementById("page-1");
                     while (list.hasChildNodes()) {
@@ -61,29 +59,4 @@ firebase.auth().onAuthStateChanged(function(user) {
         }
     }
 
-})
-
-$('#closeChange').on('click', function() {
-    closeChange.innerHTML = "請稍後"
-    $("#check").attr("disabled", true);
-    var itemsProcessed = 0
-    console.log(groupID)
-    var usersUpdate = {};
-    usersUpdate["num" + actID] = false;
-    db.collection("activity").doc("activity").update(usersUpdate).then(function() {
-        groupID.forEach(function(id) {
-            itemsProcessed++;
-            db.collection("Users").doc(id).update({
-                activityID: 0
-            }).then(function() {
-                console.log(itemsProcessed)
-                console.log(groupID.length)
-                if (itemsProcessed == groupID.length) {
-                    closeChange.innerHTML = "結束"
-                    $("#check").attr("disabled", false);
-                    window.location.href = './vip.html'
-                }
-            })
-        })
-    })
 })

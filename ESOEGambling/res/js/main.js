@@ -22,23 +22,112 @@ firebase.auth().onAuthStateChanged(function(user) {
 
         })
         db.collection("activity").doc("activity").onSnapshot(function(doc) {
-            var x = 1
-            console.log(doc.data().x)
-            for (var i = 1; i < 16; i++) {
-                if (doc.data().i == true) {
-
-                    document.getElementById('activity_' + i).innerHTML = "忙碌"
-                    document.getElementById('activity_' + i).style.color = "red"
-                } else {
-                    document.getElementById('current_' + i).innerHTML = "空閒"
-                    document.getElementById('current_' + i).style.color = "green"
-                }
-
+            if (doc.data().num1 == true) {
+                document.getElementById('activity_' + 1).innerHTML = "忙碌"
+                document.getElementById('activity_' + 1).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 1).innerHTML = "空閒"
+                document.getElementById('activity_' + 1).style.color = "green"
             }
-        })
-        for (var i = 1; i < 16; i++) {
-            console.log('activity_' + i)
-        }
+            if (doc.data().num2 == true) {
+                document.getElementById('activity_' + 2).innerHTML = "忙碌"
+                document.getElementById('activity_' + 2).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 2).innerHTML = "空閒"
+                document.getElementById('activity_' + 2).style.color = "green"
+            }
+            if (doc.data().num3 == true) {
+                document.getElementById('activity_' + 3).innerHTML = "忙碌"
+                document.getElementById('activity_' + 3).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 3).innerHTML = "空閒"
+                document.getElementById('activity_' + 3).style.color = "green"
+            }
+            if (doc.data().num4 == true) {
+                document.getElementById('activity_' + 4).innerHTML = "忙碌"
+                document.getElementById('activity_' + 4).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 4).innerHTML = "空閒"
+                document.getElementById('activity_' + 4).style.color = "green"
+            }
+            if (doc.data().num5 == true) {
+                document.getElementById('activity_' + 5).innerHTML = "忙碌"
+                document.getElementById('activity_' + 5).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 5).innerHTML = "空閒"
+                document.getElementById('activity_' + 5).style.color = "green"
+            }
+            if (doc.data().num6 == true) {
+                document.getElementById('activity_' + 6).innerHTML = "忙碌"
+                document.getElementById('activity_' + 6).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 6).innerHTML = "空閒"
+                document.getElementById('activity_' + 6).style.color = "green"
+            }
+            if (doc.data().num7 == true) {
+                document.getElementById('activity_' + 7).innerHTML = "忙碌"
+                document.getElementById('activity_' + 7).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 7).innerHTML = "空閒"
+                document.getElementById('activity_' + 7).style.color = "green"
+            }
+            if (doc.data().num8 == true) {
+                document.getElementById('activity_' + 8).innerHTML = "忙碌"
+                document.getElementById('activity_' + 8).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 8).innerHTML = "空閒"
+                document.getElementById('activity_' + 8).style.color = "green"
+            }
+            if (doc.data().num9 == true) {
+                document.getElementById('activity_' + 9).innerHTML = "忙碌"
+                document.getElementById('activity_' + 9).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 9).innerHTML = "空閒"
+                document.getElementById('activity_' + 9).style.color = "green"
+            }
+            if (doc.data().num10 == true) {
+                document.getElementById('activity_' + 10).innerHTML = "忙碌"
+                document.getElementById('activity_' + 10).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 10).innerHTML = "空閒"
+                document.getElementById('activity_' + 10).style.color = "green"
+            }
+            if (doc.data().num11 == true) {
+                document.getElementById('activity_' + 11).innerHTML = "忙碌"
+                document.getElementById('activity_' + 11).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 11).innerHTML = "空閒"
+                document.getElementById('activity_' + 11).style.color = "green"
+            }
+            if (doc.data().num12 == true) {
+                document.getElementById('activity_' + 12).innerHTML = "忙碌"
+                document.getElementById('activity_' + 12).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 12).innerHTML = "空閒"
+                document.getElementById('activity_' + 12).style.color = "green"
+            }
+            if (doc.data().num14 == true) {
+                document.getElementById('activity_' + 14).innerHTML = "忙碌"
+                document.getElementById('activity_' + 14).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 14).innerHTML = "空閒"
+                document.getElementById('activity_' + 14).style.color = "green"
+            }
+            if (doc.data().num15 == true) {
+                document.getElementById('activity_' + 15).innerHTML = "忙碌"
+                document.getElementById('activity_' + 15).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 15).innerHTML = "空閒"
+                document.getElementById('activity_' + 15).style.color = "green"
+            }
+            if (doc.data().num13 == true) {
+                document.getElementById('activity_' + 13).innerHTML = "忙碌"
+                document.getElementById('activity_' + 13).style.color = "red"
+            } else {
+                document.getElementById('activity_' + 13).innerHTML = "空閒"
+                document.getElementById('activity_' + 13).style.color = "green"
+            }
 
+        })
     }
 })

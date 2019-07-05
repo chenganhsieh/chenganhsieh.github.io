@@ -8,7 +8,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             alert("你不是關主!");
             window.location.href = '../index.html'
         } else {
-            db.collection("Users").where("free", "==", 0)
+            db.collection("Users").where("activityID", "==", 0)
                 .onSnapshot(function(querySnapshot) {
                     var list = document.getElementById("fight_group");
                     while (list.hasChildNodes()) {
@@ -42,7 +42,7 @@ $('#activity_num1').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            1: true
+            num1: true
         }).then(function() {
             selectGroup.forEach(function(id) {
                 itemsProcessed++;
@@ -65,7 +65,7 @@ $('#activity_num2').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            2: true
+            num2: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
@@ -88,7 +88,7 @@ $('#activity_num3').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            3: true
+            num3: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
@@ -111,7 +111,7 @@ $('#activity_num4').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            4: true
+            num4: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
@@ -134,7 +134,7 @@ $('#activity_num5').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            5: true
+            num5: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
@@ -157,7 +157,7 @@ $('#activity_num6').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            6: true
+            num6: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
@@ -180,7 +180,7 @@ $('#activity_num7').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            7: true
+            num7: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
@@ -203,7 +203,7 @@ $('#activity_num8').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            8: true
+            num8: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
@@ -226,7 +226,7 @@ $('#activity_num9').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            9: true
+            num9: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
@@ -249,7 +249,7 @@ $('#activity_num10').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            10: true
+            num10: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
@@ -272,7 +272,7 @@ $('#activity_num11').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            11: true
+            num11: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
@@ -295,7 +295,7 @@ $('#activity_num12').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            12: true
+            num12: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
@@ -318,7 +318,7 @@ $('#activity_num13').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            13: true
+            num13: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
@@ -341,7 +341,7 @@ $('#activity_num14').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            14: true
+            num14: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
@@ -364,7 +364,7 @@ $('#activity_num15').on('click', function() {
     } else {
         var itemsProcessed = 0;
         db.collection("activity").doc("activity").update({
-            15: true
+            num15: true
         }).then(function() {
             selectGroup.forEach(function(id) {
 
