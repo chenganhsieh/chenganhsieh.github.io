@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<!-- Made by pigoo833 -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>vip尊榮</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/gym.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+</head>
+
+<body>
+
+
+    <img class="text-dark fit " src="./img/logo_long.jpg"></img>
+
+
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+                </button>
+        <div class="collapse navbar-collapse" id="navbarsExample04" style="text-align:center">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">本館資訊 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="./page1.html">器材租借</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">器材報到</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                        <a id='a_leg' class="dropdown-item" href="leg_check.html">腿部伸張機</a>
+                        <a id='a_bottombody' class="dropdown-item" href="bottomBodyCheck.html">深蹲架</a>
+                        <a id='a_chest' class="dropdown-item" href="chestCheck.html">握推機</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-4 d-flex justify-content-end ">
+            <p id='username' class="userName">未登入</p>
+            <a id='signout' class="btn btn-sm btn-outline-secondary" href="../index.html">Sign Out</a>
+        </div>
+    </nav>
+
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="choose_group">
+                <h4 class="jumbotron-heading">結束時記得按結束</h4>
+                <button type="button" class="btn btn-danger btn-md center2" id="closeChange">結束</button>
+                <div class="row text-center">
+                    <div class="col-md-5 center2 mt-3">
+                        <label for="inputEmail" class="sr-only">賭金金額</label>
+                        <input type="number" id="gamblingMoney" placeholder="賭金" autofocus>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <div id="page-1">
+
+        </div>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">Back to top</a>
+            </p>
+            <p>工科賭博 &copy;pigoo</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/holder.min.js"></script>
+    <script src="./js/jquery.countdown.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/changeMoney.js"></script>
+
+</body>
+
+</html>
