@@ -32,12 +32,20 @@ $("#signup").on('click', function(e) {
             var errorCode = error.code
             if (errorCode == 'auth/weak-password') {
                 alert('密碼至少六位喔><');
+                signup.innerHTML = "註冊"
+                $("#signup").attr("disabled", false);
             } else if (errorCode == 'auth/email-already-in-use') {
                 alert('註冊過了')
+                signup.innerHTML = "註冊"
+                $("#signup").attr("disabled", false);
             } else if (errorCode == 'auth/invalid-email') {
                 alert('email有填嗎?格式怪怪的')
+                signup.innerHTML = "註冊"
+                $("#signup").attr("disabled", false);
             } else {
                 alert(error.message)
+                signup.innerHTML = "註冊"
+                $("#signup").attr("disabled", false);
             }
 
             // if (password.length < 6) {
