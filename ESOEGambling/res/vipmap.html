@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>vip尊榮</title>
+    <title>工科營賭場</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -31,33 +31,32 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-                </button>
+                  <span class="navbar-toggler-icon"></span>
+                    </button>
         <div class="collapse navbar-collapse" id="navbarsExample04" style="text-align:center">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="./vip.html">主畫面 <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item dropdown active">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">特殊角色</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                         <a id='a_leg' class="dropdown-item" href="./changeMoneyAll.html">卡奴</a>
                         <a id='a_bottombody' class="dropdown-item" href="./changeMoneyAll.html">黑道</a>
-                        <a id='a_chest' class="dropdown-item" href="./pawnshopVip.html">當鋪</a>
+                        <a id='a_chest' class="dropdown-item" href="./changeMoneyAll.html">當鋪</a>
                     </div>
                 </li>
                 <li class=" nav-item ">
                     <a class="nav-link " href="./viplotto.html">樂透資訊 <span class="sr-only ">(current)</span></a>
                 </li>
-
                 <li class="nav-item ">
                     <a class="nav-link " href="./vipinfo.html">宣傳重要資訊</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="./release.html">控場(忘記解放請來這)</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="./vipmap.html">地圖</a>
+                <li class="nav-item active">
+                    <a class="nav-link " href="#">地圖</a>
                 </li>
 
             </ul>
@@ -69,69 +68,19 @@
     </nav>
 
 
-    <main role="main ">
 
-        <section class="jumbotron text-center ">
-            <div class="choose_group ">
-                <h4 class="jumbotron-heading " id="status">載入中...</h4>
-                <div class="container">
-                    <div class="row justify-content-center">
+    <main role="main">
+        <div class="container">
+            <div class="row">
+                <div class="thumbnail">
 
-                        <div class="dropdown mt-2">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 1</button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <ul class="list-group " id="fight_group1">
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="dropdown mt-2 ml-1">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        2
-                        </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <ul class="list-group " id="fight_group2">
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row justify-content-center">
-
-                        <div class="dropdown mt-2">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                            3</button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <ul class="list-group " id="fight_group3">
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="dropdown mt-2 ml-1">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            4
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <ul class="list-group " id="fight_group4">
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <img class="img-responsive" src="./img/map.png" alt="map" style="width:100%">
 
                 </div>
-        </section>
-        <div class="row text-center">
-            <div class="col-md-5 center2 mt-3">
-                <h3>賭金金額</h3>
-                <label for="inputEmail" class="sr-only">賭金金額</label>
-                <input type="number" id="gamblingMoney" placeholder="賭金" autofocus>
+
             </div>
-
         </div>
-        <div id="page-1">
-
-        </div>
-
     </main>
-
     <footer class="text-muted ">
         <div class="container ">
             <p class="float-right ">
@@ -151,7 +100,6 @@
     <script src="./js/holder.min.js "></script>
     <script src="./js/jquery.countdown.js "></script>
     <script src="./js/auth.js "></script>
-    <script src="./js/changeMoneyAll.js "></script>
 
 </body>
 
