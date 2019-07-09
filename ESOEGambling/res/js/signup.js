@@ -71,7 +71,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     db.collection("Users").doc(user.uid).set({
                             activityID: 0,
                             free: 0,
-                            lottonumdetail = [],
+                            lottonumdetail: [],
                             lottonum: {
                                 0: false,
                                 1: false,
@@ -126,7 +126,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                                 50: false
                             },
                             name: name,
-                            money: 99999,
+                            money: 10000,
                             mortgage: [],
                             groupID: parseInt(groupID)
                         })
