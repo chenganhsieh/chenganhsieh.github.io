@@ -23,16 +23,16 @@
 </head>
 
 <body>
-
-
-    <img class="text-dark fit " src="./img/logo_long.jpg"></img>
-
-
+    <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center  mx-auto">
+            <img class="blog-header-logo text-dark center" src="./img/logo_long.jpg"></img>
+        </div>
+    </header>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                    </button>
+              <span class="navbar-toggler-icon"></span>
+                </button>
         <div class="collapse navbar-collapse" id="navbarsExample04" style="text-align:center">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -43,58 +43,98 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                         <a id='a_leg' class="dropdown-item" href="./changeMoneyAll.html">卡奴</a>
                         <a id='a_bottombody' class="dropdown-item" href="./changeMoneyAll.html">黑道</a>
-                        <a id='a_chest' class="dropdown-item" href="./changeMoneyAll.html">當鋪</a>
+                        <a id='a_chest' class="dropdown-item" href="./pawnshopVip.html">當鋪</a>
                     </div>
                 </li>
+                <li class=" nav-item ">
+                    <a class="nav-link " href="./viplotto.html">樂透資訊 <span class="sr-only ">(current)</span></a>
+                </li>
+                <li class=" nav-item ">
+                    <a class="nav-link " href="./stockvip.html">股票市場 <span class="sr-only ">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="./vipinfo.html">宣傳重要資訊</a>
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./viplotto.html">樂透資訊 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="#">股票市場</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./vipinfo.html">全部人廣播</a>
+                    <a class="nav-link " href="./release.html">控場(忘記解放請來這)</a>
                 </li>
 
             </ul>
         </div>
         <div class="col-4 d-flex justify-content-end ">
-            <p id='username' class="userName">未登入</p>
-            <a id='signout' class="btn btn-sm btn-outline-secondary" href="../index.html">Sign Out</a>
+            <p id='username' class="userName ">未登入</p>
+            <a id='signout' class="btn btn-sm btn-outline-secondary " href="../index.html ">Sign Out</a>
         </div>
     </nav>
 
 
-    <main role="main">
+    <main role="main ">
 
-        <section class="jumbotron text-center">
-            <h4 class="jumbotron-heading" id="time">~你掌控全部人的錢~</h4>
-            <div class="choose_group">
-                <div class="row text-center">
-                    <div class="col-md-5 center2 mt-3">
-                        <label for="inputEmail" class="sr-only">賭金金額</label>
-                        <input type="number" id="gamblingMoney" placeholder="賭金" autofocus>
+        <section class="jumbotron text-center ">
+            <div class="choose_group ">
+                <h4 class="jumbotron-heading " id="status">載入中...</h4>
+                <div class="container">
+                    <div class="row justify-content-center">
+
+                        <div class="dropdown mt-2">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 1</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <ul class="list-group " id="fight_group1">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="dropdown mt-2 ml-1">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        2
+                        </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <ul class="list-group " id="fight_group2">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+
+                        <div class="dropdown mt-2">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                            3</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <ul class="list-group " id="fight_group3">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="dropdown mt-2 ml-1">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            4
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <ul class="list-group " id="fight_group4">
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
-            </div>
         </section>
+        <div class="row text-center">
+            <div class="col-md-5 center2 mt-3">
+                <h3>賭金金額</h3>
+                <label for="inputEmail" class="sr-only">賭金金額</label>
+                <input type="number" id="gamblingMoney" placeholder="賭金" autofocus>
+            </div>
+
+        </div>
         <div id="page-1">
 
         </div>
 
-
-
-
-
-
-
     </main>
 
-    <footer class="text-muted">
-        <div class="container">
-            <p class="float-right">
-                <a href="#">Back to top</a>
+    <footer class="text-muted ">
+        <div class="container ">
+            <p class="float-right ">
+                <a href="# ">Back to top</a>
             </p>
             <p>工科賭博 &copy;pigoo</p>
         </div>
@@ -104,13 +144,13 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="./js/popper.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/holder.min.js"></script>
-    <script src="./js/jquery.countdown.js"></script>
-    <script src="./js/auth.js"></script>
-    <script src="./js/changeMoneyAll.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js "></script>
+    <script src="./js/popper.min.js "></script>
+    <script src="./js/bootstrap.min.js "></script>
+    <script src="./js/holder.min.js "></script>
+    <script src="./js/jquery.countdown.js "></script>
+    <script src="./js/auth.js "></script>
+    <script src="./js/changeMoneyAll.js "></script>
 
 </body>
 

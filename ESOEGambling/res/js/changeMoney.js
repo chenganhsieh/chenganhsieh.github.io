@@ -87,3 +87,9 @@ $('#closeChange').on('click', function() {
         })
     })
 })
+
+history.pushState(null, null, document.URL);
+window.addEventListener('popstate', function() {
+    this.alert("記得按結束紐")
+    history.pushState(null, null, document.URL);
+});

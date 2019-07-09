@@ -38,25 +38,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./vip.html">主畫面 <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">特殊角色</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                         <a id='a_leg' class="dropdown-item" href="./changeMoneyAll.html">卡奴</a>
                         <a id='a_bottombody' class="dropdown-item" href="./changeMoneyAll.html">黑道</a>
-                        <a id='a_chest' class="dropdown-item" href="./pawnshopVip.html">當鋪</a>
+                        <a id='a_chest' class="dropdown-item" href="#">當鋪</a>
                     </div>
                 </li>
                 <li class=" nav-item ">
-                    <a class="nav-link " href="./viplotto.html ">樂透資訊 <span class="sr-only ">(current)</span></a>
+                    <a class="nav-link " href="./viplotto.html">樂透資訊 <span class="sr-only ">(current)</span></a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link " href="./stockvip.html">股票市場</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link " href="# ">宣傳重要資訊</a>
-                </li>
                 <li class="nav-item ">
-                    <a class="nav-link " href="#">控場(忘記解放請來這)</a>
+                    <a class="nav-link " href="./vipinfo.html">宣傳重要資訊</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="./release.html">控場(忘記解放請來這)</a>
                 </li>
 
             </ul>
@@ -67,33 +67,78 @@
         </div>
     </nav>
 
+
     <main role="main ">
-        <div class="row text-center">
-            <div class="col-md-10 center2 mt-3">
-                <h3>發文囉</h3>
-                <textarea name="Text1" cols="40" rows="5" id="textContent"></textarea>
-            </div>
-            <div class="col-md-10 center2 mt-3">
-                <button type="button" id="button">發廢文</button>
-            </div>
 
-        </div>
+        <section class="jumbotron text-center ">
+            <div class="choose_group ">
+                <h4 class="jumbotron-heading " id="status">載入中...</h4>
+                <div class="container">
+                    <div class="row justify-content-center">
 
-        <div id="page-1 ">
-            <div class="album py-5 bg-light" id="text_group">
-                <div class="container ">
-                    <div class="row ">
-                        <div class="col-md-8 mx-auto">
-                            <div class="card mb-4 box-shadow " id="activity_num1">
-                                <div class="card-body ">
-                                    <p class="card-text ">插插海盜</p>
-                                </div>
+                        <div class="dropdown mt-2">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 1</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <ul class="list-group " id="fight_group1">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="dropdown mt-2 ml-1">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        2
+                        </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <ul class="list-group " id="fight_group2">
+                                </ul>
                             </div>
                         </div>
                     </div>
+
+                    <div class="row justify-content-center">
+
+                        <div class="dropdown mt-2">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                            3</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <ul class="list-group " id="fight_group3">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="dropdown mt-2 ml-1">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            4
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <ul class="list-group " id="fight_group4">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+        </section>
+        <div id="page-1" class="row text-center">
+
+        </div>
+        <div id="page-2" class="row text-center">
+            <div class="col-md-3 center2 mt-3">
+                <h4 class="jumbotron-heading">贖回:</h4>
+                <ul class="list-group" id="getback">
+                    <li class="list-group-item">無</li>
+
+                </ul>
             </div>
         </div>
+        <section class=" text-center mt-3">
+            <div class="choose_group">
+                <h4 class="jumbotron-heading">當鋪狀況:</h4>
+                <ul class="list-group" id="pawnshopstatus">
+                    <li class="list-group-item">無
+                    </li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
     <footer class="text-muted ">
@@ -115,7 +160,7 @@
     <script src="./js/holder.min.js "></script>
     <script src="./js/jquery.countdown.js "></script>
     <script src="./js/auth.js "></script>
-    <script src="./js/vipinfo.js "></script>
+    <script src="./js/pawnshopVip.js"></script>
 
 </body>
 

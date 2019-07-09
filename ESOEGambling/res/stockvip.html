@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>vip尊榮</title>
+    <title>工科營賭場</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -31,8 +31,8 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-                </button>
+                  <span class="navbar-toggler-icon"></span>
+                    </button>
         <div class="collapse navbar-collapse" id="navbarsExample04" style="text-align:center">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -43,20 +43,20 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                         <a id='a_leg' class="dropdown-item" href="./changeMoneyAll.html">卡奴</a>
                         <a id='a_bottombody' class="dropdown-item" href="./changeMoneyAll.html">黑道</a>
-                        <a id='a_chest' class="dropdown-item" href="./pawnshopVip.html">當鋪</a>
+                        <a id='a_chest' class="dropdown-item" href="./changeMoneyAll.html">當鋪</a>
                     </div>
                 </li>
                 <li class=" nav-item ">
-                    <a class="nav-link " href="./viplotto.html ">樂透資訊 <span class="sr-only ">(current)</span></a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link " href="./stockvip.html">股票市場</a>
+                    <a class="nav-link " href="./viplotto.html">樂透資訊 <span class="sr-only ">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link " href="# ">宣傳重要資訊</a>
+                    <a class="nav-link " href="./stockvip.html">股票市場</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " href="#">控場(忘記解放請來這)</a>
+                    <a class="nav-link " href="./vipinfo.html">宣傳重要資訊</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="./release.html">控場(忘記解放請來這)</a>
                 </li>
 
             </ul>
@@ -65,33 +65,60 @@
             <p id='username' class="userName ">未登入</p>
             <a id='signout' class="btn btn-sm btn-outline-secondary " href="../index.html ">Sign Out</a>
         </div>
+    </nav>>
     </nav>
 
-    <main role="main ">
-        <div class="row text-center">
-            <div class="col-md-10 center2 mt-3">
-                <h3>發文囉</h3>
-                <textarea name="Text1" cols="40" rows="5" id="textContent"></textarea>
-            </div>
-            <div class="col-md-10 center2 mt-3">
-                <button type="button" id="button">發廢文</button>
-            </div>
 
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h3 class="jumbotron-heading" id="status">載入中...請稍後</h3>
+                <p class="lead" style="color:red;" id="current_money">99999</p>
+            </div>
+        </section>
+        <section class=" text-center">
+            <div class="choose_group">
+                <h4 class="jumbotron-heading">簡單版股票:</h4>
+                <h5 class="jumbotron-heading">每點100元(不變動)</h5>
+                <h5 class="jumbotron-heading">單位:張(價格為當期點數*100)</h5>
+            </div>
+        </section>
+        <div id="page-1">
+            <div id="container" style="margin: 0 auto"></div>
         </div>
-
-        <div id="page-1 ">
-            <div class="album py-5 bg-light" id="text_group">
-                <div class="container ">
-                    <div class="row ">
-                        <div class="col-md-8 mx-auto">
-                            <div class="card mb-4 box-shadow " id="activity_num1">
-                                <div class="card-body ">
-                                    <p class="card-text ">插插海盜</p>
-                                </div>
-                            </div>
-                        </div>
+        <div id="page-2" class="row text-center">
+            <div class="col-md-3 center2 mt-3">
+                <h4 class="jumbotron-heading">輸入新點數:</h4>
+                <input type="number" id="inputPoint" class="form-control" placeholder="點數" min="0" step="0.01">
+                <button class="btn btn-lg btn-info btn-block mt-3" type="submit" id="ensure">確認</button>
+            </div>
+        </div>
+        <div id="page-3" class="row text-center">
+            <div class="col-md-3 center2 mt-3">
+                <h4 class="jumbotron-heading">購買:</h4>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         張數
+                        </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" id="num1">1</a>
+                        <a class="dropdown-item" id="num2">2</a>
+                        <a class="dropdown-item" id="num3">3</a>
                     </div>
                 </div>
+                <h4 class="jumbotron-heading" id="price">價格:0</h4>
+                <button class="btn btn-lg btn-info btn-block mt-3" type="submit" id="buy">確認</button>
+            </div>
+        </div>
+        <div id="page-4" class="row text-center">
+            <div class="col-md-3 center2 mt-3">
+                <h4 class="jumbotron-heading">持股:</h4>
+                <ul class="list-group" id="getback">
+                    <li class="list-group-item">
+                        <p>無</p>
+                    </li>
+                </ul>
             </div>
         </div>
     </main>
@@ -115,7 +142,8 @@
     <script src="./js/holder.min.js "></script>
     <script src="./js/jquery.countdown.js "></script>
     <script src="./js/auth.js "></script>
-    <script src="./js/vipinfo.js "></script>
+    <script src="./js/highcharts.js "></script>
+    <script src="./js/stockvip.js "></script>
 
 </body>
 

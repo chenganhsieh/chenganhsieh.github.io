@@ -48,27 +48,17 @@ $("#signup").on('click', function(e) {
                 $("#signup").attr("disabled", false);
             }
 
-            // if (password.length < 6) {
-            //     alert("password too short!!")
-            //     return
-            // } else {
-            //     alert("You already have an account!! Please change to another email or choose to login.")
-            // }
-            // ...
         });
     }
-    // firebase.auth().createUserWithEmailAndPassword($("input[name='email']").val(),
-    //     $("input[name='password']").val()).then(function(firebaseUser) {
-    //     console.log("User " + firebaseUser.uid + " created successfully!");
-    //     return firebaseUser;
 });
-// });
+
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         console.log(user)
         var user = firebase.auth().currentUser;
         var name = $("#inputName").val()
+        var groupID = $("#inputGroup").val();
         user.updateProfile({
             displayName: name,
         }).then(function() {
@@ -79,9 +69,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                     window.location.href = './main.html'
                 } else {
                     db.collection("Users").doc(user.uid).set({
-
                             activityID: 0,
                             free: 0,
+                            lottonumdetail = [],
                             lottonum: {
                                 0: false,
                                 1: false,
@@ -137,8 +127,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                             },
                             name: name,
                             money: 99999,
-                            mortgage: []
-
+                            mortgage: [],
+                            groupID: parseInt(groupID)
                         })
                         .then(function() {
                             signup.innerHTML = "註冊"

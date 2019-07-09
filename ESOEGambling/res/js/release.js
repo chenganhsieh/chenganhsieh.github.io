@@ -2,7 +2,7 @@ var db = firebase.firestore();
 firebase.database.enableLogging(true);
 
 var selectGroup = [];
-var idCount = [1, 2, 3, 4]
+var idCount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         if (user.uid != "sAQDjCgaSFcAyDIZIgo2cMT4U6y2") {
@@ -10,39 +10,56 @@ firebase.auth().onAuthStateChanged(function(user) {
             window.location.href = '../index.html'
         } else {
             idCount.forEach(function(i) {
-                db.collection("Users").where("activityID", "==", 0).where("groupID", "==", i)
-                    .onSnapshot(function(querySnapshot) {
-                        var list = document.getElementById("fight_group" + i);
-                        while (list.hasChildNodes()) {
-                            list.removeChild(list.firstChild);
-                        }
-                        if (i == 4) {
-                            $("#status").text("請選擇隊名");
-                        }
-                        querySnapshot.forEach(function(doc) {
-                            // doc.data() is never undefined for query doc snapshots
-                            console.log(doc.id, " => ", doc.data());
-                            var group = $('<li class="list-group-item" id="' + doc.id + '">' + doc.data().name + '</li>');
-                            group.appendTo('#fight_group' + i);
-
-                            $('#' + doc.id).on('click', function() {
-                                var element = document.getElementById(doc.id);
-                                element.classList.toggle("active");
-                                if (selectGroup.indexOf(doc.id) == -1) {
-                                    selectGroup.push(doc.id)
-                                } else {
-                                    var index = selectGroup.indexOf(doc.id)
-                                    selectGroup.splice(index, 1)
-                                }
-                                console.log(selectGroup)
-                            })
+                $('#release' + i).on('click', function() {
+                    document.getElementById("release" + i).innerHTML = "解放中..."
+                    $("#release" + i).attr("disabled", true);
+                    db.collection("Users").where("activityID", "==", parseInt(i))
+                        .get()
+                        .then(function(querySnapshot) {
+                            var temp = 0
+                            if (querySnapshot.empty) {
+                                document.getElementById("release" + i).innerHTML = "解放"
+                                $("#release" + i).attr("disabled", false);
+                            } else {
+                                querySnapshot.forEach(function(doc) {
+                                    temp++;
+                                    db.collection("Users").doc(doc.id).update({
+                                        activityID: 0
+                                    })
+                                    if (temp == querySnapshot.size) {
+                                        document.getElementById("release" + i).innerHTML = "解放"
+                                        $("#release" + i).attr("disabled", false);
+                                    }
+                                })
+                            }
                         })
+                })
+                db.collection("Users").where("activityID", "==", parseInt(i))
+                    .onSnapshot(function(querySnapshot) {
+
+                        var textField = document.getElementById("activity" + i)
+                        var name = ""
+                        var temp = 0
+                        if (querySnapshot.empty) {
+                            textField.innerHTML = "沒人"
+                        } else {
+                            querySnapshot.forEach(function(doc) {
+                                console.log(temp)
+                                console.log(querySnapshot.size)
+                                temp++
+                                name = name + " " + doc.data().name
+                                if (temp == querySnapshot.size) {
+                                    textField.innerHTML = name
+                                }
+                            })
+                        }
                     })
             })
 
         }
     }
 })
+
 $('#activity_num1').on('click', function() {
     if (selectGroup.length == 0) {
         alert("記得至少選一個組別喔");
@@ -389,7 +406,3 @@ $('#activity_num15').on('click', function() {
         })
     }
 })
-
-$('.dropdown-menu').click(function(e) {
-    e.stopPropagation();
-});

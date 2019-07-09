@@ -1,7 +1,7 @@
 var db = firebase.firestore();
 firebase.database.enableLogging(true);
 
-var selectNum = [0, 0, 0];
+var selectNum = [-1, -1, -1];
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         if (user.uid != "sAQDjCgaSFcAyDIZIgo2cMT4U6y2") {
@@ -83,6 +83,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     querySnapshot.forEach(function(doc) {
                         var lottoRef = db.collection("Users").doc(doc.id);
                         lottoRef.update({
+                            lottonumdetail: [],
                             lottonum: {
                                 0: false,
                                 1: false,

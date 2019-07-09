@@ -4,31 +4,58 @@ firebase.database.enableLogging(true);
 var selectNum = [0, 0, 0];
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-
-        var childs = document.getElementById('button_group').children;
-        for (var i = 0; i < childs.length; i++) {
-            childs[i].onclick = (function(t) {
-                return function(e) {
-
-                    selectNum.shift()
-                    selectNum.push(t + 1)
-                    console.log(selectNum)
-                    for (var i = 2; i > -1; i--) {
-                        if (selectNum[i] < 10) {
-                            document.getElementById("lotto" + i).innerHTML = "0" + selectNum[i];
-                        } else {
-                            document.getElementById("lotto" + i).innerHTML = selectNum[i];
-                        }
+        db.collection("Users").doc(user.uid).onSnapshot(function(doc) {
+            var childs = document.getElementById('button_group').children;
+            if (doc.data().lottonumdetail.length != 0) {
+                check.innerHTML = "已送出"
+                $("#check").attr("disabled", true);
+                selectNum = doc.data().lottonumdetail
+                for (var i = 2; i > -1; i--) {
+                    if (selectNum[i] < 10) {
+                        document.getElementById("lotto" + i).innerHTML = "0" + selectNum[i];
+                    } else {
+                        document.getElementById("lotto" + i).innerHTML = selectNum[i];
                     }
                 }
+                for (var i = 0; i < childs.length; i++) {
+                    childs[i].onclick = (function(t) {
+                        return function(e) {}
+                    })(i)
+                }
+            } else {
+                check.innerHTML = "送出"
+                $("#check").attr("disabled", false);
+                for (var i = 2; i > -1; i--) {
 
-            })(i)
-        }
+                    document.getElementById("lotto" + i).innerHTML = "0";
+
+                }
+                for (var i = 0; i < childs.length; i++) {
+                    childs[i].onclick = (function(t) {
+                        return function(e) {
+
+                            selectNum.shift()
+                            selectNum.push(t + 1)
+                            console.log(selectNum)
+                            for (var i = 2; i > -1; i--) {
+                                if (selectNum[i] < 10) {
+                                    document.getElementById("lotto" + i).innerHTML = "0" + selectNum[i];
+                                } else {
+                                    document.getElementById("lotto" + i).innerHTML = selectNum[i];
+                                }
+                            }
+                        }
+
+                    })(i)
+                }
+            }
+        })
 
         $("#check").on('click', function() {
             check.innerHTML = "送出中..."
             $("#check").attr("disabled", true);
             var usersUpdate = {};
+            usersUpdate['lottonumdetail'] = [selectNum[0], selectNum[1], selectNum[2]];
             usersUpdate['lottonum.' + selectNum[0]] = true;
             usersUpdate['lottonum.' + selectNum[1]] = true;
             usersUpdate['lottonum.' + selectNum[2]] = true;
