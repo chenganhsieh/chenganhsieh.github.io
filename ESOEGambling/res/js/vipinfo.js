@@ -18,7 +18,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                         // doc.data() is never undefined for query doc snapshots
 
                         var temp = doc.data().date.seconds
-                        var time = temp.toString().toHHMMSS()
+                        var date = new Date(temp * 1000);
+
+                        var time = date.toLocaleTimeString()
                         var group = $('<div class="container "><div class="row "> <div class="col-md-8 mx-auto"><div class="card mb-4 box-shadow " id="activity_num1"><div class="card-body "><p class="card-text ">' + doc.data().text + "    " + time + '</p></div></div></div></div></div>')
                         group.appendTo('#text_group');
                     })
