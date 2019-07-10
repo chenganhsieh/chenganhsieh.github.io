@@ -58,10 +58,10 @@ firebase.auth().onAuthStateChanged(function(user) {
                                                                 money: result
                                                             })
                                                         } else {
-                                                            if (current < cost * t) {
+                                                            if (current < cost * (t - 5)) {
                                                                 alert(doc.data().name + "破產!")
                                                             } else {
-                                                                var result = current - cost * t
+                                                                var result = current - cost * (t - 5)
                                                                 db.collection("Users").doc(doc.id).update({
                                                                     money: result
                                                                 })
