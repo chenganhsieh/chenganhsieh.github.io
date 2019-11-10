@@ -1,0 +1,203 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+
+body {
+    padding-top: 56px;
+    background: rgb(226, 226, 226);
+}
+
+.carousel-item {
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 72px);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(104, 90, 80, 0.6)), to(rgba(104, 90, 80, 0.6))), url("../img/bg-personProFile.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+header.masthead1 {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 72px);
+    background: rgba(90, 81, 75, 0.6);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+header.masthead h1 {
+    font-size: 2.25rem;
+    text-shadow: 0.05em 0.05em #333;
+}
+
+header.masthead h2 {
+    font-size: 2rem;
+    text-shadow: 0.05em 0.05em #333;
+}
+
+@media (min-width: 992px) {
+    header.masthead {
+        height: 100vh;
+        min-height: 40rem;
+        padding-top: 72px;
+        padding-bottom: 0;
+    }
+    header.masthead p {
+        font-size: 1.15rem;
+    }
+    header.masthead h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    header.masthead h1 {
+        font-size: 3.5rem;
+    }
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.font-weight-light {
+    font-weight: 300 !important;
+}
+
+.mt-4,
+.my-4 {
+    margin-top: 1.5rem !important;
+    text-align: center;
+}
+
+.mb-5,
+.my-5 {
+    margin-bottom: 3rem !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #f4623a00;
+    border-color: #ffffff;
+}
+
+.btn-xl {
+    padding: 1.25rem 2.25rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 10rem;
+}
+
+.card-bg {
+    background: rgb(255, 255, 255);
+    border-radius: 25px;
+    box-shadow: 0px 0px 2px black;
+}
+
+.card-imgBGcolor {
+    background-color: #e47777;
+}
+
+.card-imgBGcolor2 {
+    background-color: #7fcdb8;
+}
+
+.card-imgBGcolor3 {
+    background-color: #7f9acd;
+}
+
+.card-imgFix {
+    width: 120px;
+    height: 150px;
+}
+
+.card-imgfull {
+    width: 100%;
+    height: 200px;
+}
+
+.card-hd {
+    text-align: center;
+    color: rgb(122, 122, 122);
+}
+
+.card-ct {
+    text-align: center;
+    padding: 1rem 5rem;
+    font-size: 2rem;
+    color: rgb(83, 83, 83);
+}
+
+.card-ct2 {
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    color: rgb(83, 83, 83);
+}
+
+.skill-img {
+    width: 20%;
+    padding: 0rem 3rem;
+    padding-top: 5rem;
+}
+
+.contact-img {
+    width: 25%;
+    height: auto;
+    padding: 0rem 3rem;
+}
+
+hr.divider {
+    max-width: 3.25rem;
+    border-width: 0.2rem;
+    border-color: #f4623a;
+}
+
+h3 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+#footer .icons a {
+    opacity: 0.35;
+    filter: alpha(opacity=50);
+}
+
+#footer .icons a:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
+ul.icons li .icon:before {
+    font-size: 1.75em;
+}
+
+ul.icons {
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+}
+
+#footer ul li {
+    display: inline;
+    margin-left: 40px;
+}
