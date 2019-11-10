@@ -33,6 +33,16 @@ header.masthead {
     background-size: cover;
 }
 
+header.masthead1 {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 72px);
+    background: rgba(90, 81, 75, 0.6);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
 header.masthead h1 {
     font-size: 2.25rem;
     text-shadow: 0.05em 0.05em #333;
@@ -145,10 +155,9 @@ header.masthead h2 {
 }
 
 .skill-img {
-    width: 25%;
-    height: auto;
-    max-height: 100%;
+    width: 20%;
     padding: 0rem 3rem;
+    padding-top: 5rem;
 }
 
 .contact-img {

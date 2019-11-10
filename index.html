@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-tw">
 
 <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="解正安">
 
     <title>Pigoo Website</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
     <!-- Icon css -->
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
 </head>
@@ -37,18 +37,18 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="cv.html">CV</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              My Project
-            </a>
+                         My Project
+                        </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                            <a class="dropdown-item" href="https://www.instructables.com/id/%E7%A7%BB%E5%8B%95%E6%B1%AA%E6%B1%AA/">汪汪自走車</a>
-                            <a class="dropdown-item" href="https://aidea-web.tw/topic/b6abbf14-2d60-456c-8cbe-34fdfcd58967">新聞檢索競賽(暫居第六)</a>
-                            <a class="dropdown-item" href="https://pigoo833.github.io/gymReservation/index.html">健身房預約系統</a>
-                            <a class="dropdown-item" href="https://chiplay.acm.org/2019/wip/">Fitness game</a>
-                            <a class="dropdown-item" href="https://drive.google.com/open?id=1vg1518QjQTmPsFcqI_lpH4L_dV4X4Gxp">ECG Research</a>
+                            <a class="dropdown-item" href="https://www.instructables.com/id/%E7%A7%BB%E5%8B%95%E6%B1%AA%E6%B1%AA/" target="_blank">汪汪自走車</a>
+                            <a class="dropdown-item" href="https://aidea-web.tw/topic/b6abbf14-2d60-456c-8cbe-34fdfcd58967" target="_blank">新聞檢索競賽(暫居第六)</a>
+                            <a class="dropdown-item" href="https://pigoo833.github.io/gymReservation/index.html" target="_blank">健身房預約系統</a>
+                            <a class="dropdown-item" href="https://dl.acm.org/citation.cfm?id=3356258" target="_blank">Fitness game</a>
+                            <a class="dropdown-item" href="https://drive.google.com/open?id=1vg1518QjQTmPsFcqI_lpH4L_dV4X4Gxp" target="_blank">ECG Research</a>
                         </div>
                     </li>
 
@@ -60,12 +60,12 @@
 
     <header class="masthead">
         <div class="container h-100">
-            <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="row h-100 align-items-center justify-content-center text-lg-right">
                 <div class="col-lg-10 align-self-end">
                     <h1 class="text-uppercase text-white font-weight-bold">解正安</h1>
                     <h2 class="text-uppercase text-white font-weight-bold">ChENG-AN HSIEH</h2>
                 </div>
-                <div class="col-lg-8 align-self-baseline">
+                <div class="col-lg-10 align-self-baseline">
                     <p class="text-white-75 font-weight-light mb-5">Student,Dept. of Engineering Science</p>
                     <p class="text-white-75 font-weight-light mb-5">National Taiwan University</p>
                     <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Learn more</a>
@@ -75,79 +75,76 @@
 
     </header>
 
+    <header class="masthead1" id="about">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-10 align-self-end">
+                    <h1 class="text-uppercase text-white font-weight-bold">Welcome to Pigoo's Website</h1>
+                    <h4 class="text-white  font-weight-bold text-center">
+                        Keen on learning human computer interaction with machine intelligence.
+                    </h4>
+                </div>
+                <div class="row justify-content-center">
+                    <img src="./img/html_css.jpg" alt="html/css" class="skill-img">
+                    <img src="./img/android.png" alt="Android" class="skill-img">
+                    <img src="./img/unity.png" alt="unity" class="skill-img">
+                    <img src="./img/pytorch.png" alt="pytorch" class="skill-img">
+
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <header class="masthead1" style="background-color: black;">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-10 align-self-end">
+                    <h1 class="text-uppercase text-white font-weight-bold" id="about">Current Project</h1>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-sm-6 portfolio-item">
+                        <div class="card h-100">
+                            <a href="#" target="_blank"><img class="card-img-top card-imgfull " src="./img/iron_man.jfif" alt="Iron Man"></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#" target="_blank">Iron Man</a>
+                                </h4>
+                                <p class="card-text">利用unity設計VR遊戲，並結合特殊的Feedback，增進遊戲體驗(預計1月完成)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 portfolio-item">
+                        <div class="card h-100">
+                            <a href="#" target="_blank"><img class="card-img-top card-imgfull " src="img/project/ecg.png" alt="Ecg signal"></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Ecg Authentication</a>
+                                </h4>
+                                <p class="card-text">Electrocardiogram(Ecg)心電圖在每個人身上其實都不太相同，
+                                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0031320304002419">研究</a>指出該心電圖甚至可以作為驗證是否是本人的一種安全機制。因此，目前希望使用machine learning的方式，去驗證使用者，並希望未來能有新的安全機制可以使用。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 portfolio-item">
+                        <div class="card h-100">
+                            <a href="https://ntu-hcid-2019s.github.io/app-bobo/?fbclid=IwAR0VrAYMiW3r3byrCb-PDoJkqwPSG-qtd6iqkUmUSsETV2IJaYtrH1u3BRM" target="_blank"><img class="card-img-top card-imgfull " src="img/project/bobo.PNG" alt="BoBo app"></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="https://play.google.com/store/apps/details?id=com.littlepig.bobo" target="_blank">BoBo app</a>
+                                </h4>
+                                <p class="card-text">想玩桌遊卻找不到人嗎?桌遊玩到一半卻不知道怎麼玩嗎? 別擔心!目前正努力設計一款可以結合社交和規則書的app，它具有可愛的畫風，不失典雅的色調，讓你玩桌遊時，可以輕鬆愉快的玩!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
     <!-- Page Content -->
     <div class="container ">
-
-
-        <h3 class="mt-5 mx-auto" id="about">Welcome to Pigoo's Website</h3>
-        <!-- Marketing Icons Section -->
-
-        <div class="col-lg-10 mt-5 mb-3 mx-auto">
-            <div class="card h-100 card-bg">
-                <div class="card-body">
-                    <h1 class=" text-secondary font-weight-bold text-center">
-                        Keen on learning human computer interaction with machine intelligence.
-                    </h1>
-                    <hr class="divider my-4">
-                    <p class="card-text card-ct2">
-                        My skill:
-                    </p>
-                    <div class="row justify-content-center">
-                        <img src="./img/html_css.jpg" alt="html/css" class="skill-img">
-                        <img src="./img/android.png" alt="Android" class="skill-img">
-                        <img src="./img/unity.png" alt="unity" class="skill-img">
-                        <img src="./img/pytorch.png" alt="pytorch" class="skill-img">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- /.row -->
-
-        <!-- Portfolio Section -->
-        <h3 class="mt-5 mx-auto" id="about">Current Project</h3>
-
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="https://aidea-web.tw/topic/b6abbf14-2d60-456c-8cbe-34fdfcd58967?focus=team&team_focus=team_request" target="_blank"><img class="card-img-top card-imgfull " src="https://aidea-web.tw/images/5c944b1895b94300143a4f7b/b6abbf14-2d60-456c-8cbe-34fdfcd58967-big.png" alt="News Retrieval"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">新聞檢索競賽</a>
-                        </h4>
-                        <p class="card-text">新聞媒體報導常常會有不同的立場，如果能有系統準確的判斷新聞立場和內容，可以讓使用者更快找到想找的新聞。該比賽可以用機器學習或是其他方式達成。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top card-imgfull " src="img/project/ecg.png" alt="Ecg signal"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Ecg Authentication</a>
-                        </h4>
-                        <p class="card-text">Electrocardiogram(Ecg)心電圖在每個人身上其實都不太相同，
-                            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0031320304002419">研究</a>指出該心電圖甚至可以作為驗證是否是本人的一種安全機制。因此，目前希望使用machine learning的方式，去驗證使用者，並希望未來能有新的安全機制可以使用。
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="https://ntu-hcid-2019s.github.io/app-bobo/?fbclid=IwAR0VrAYMiW3r3byrCb-PDoJkqwPSG-qtd6iqkUmUSsETV2IJaYtrH1u3BRM"><img class="card-img-top card-imgfull " src="img/project/bobo.PNG" alt="BoBo app"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="https://ntu-hcid-2019s.github.io/app-bobo/?fbclid=IwAR0VrAYMiW3r3byrCb-PDoJkqwPSG-qtd6iqkUmUSsETV2IJaYtrH1u3BRM">BoBo app</a>
-                        </h4>
-                        <p class="card-text">想玩桌遊卻找不到人嗎?桌遊玩到一半卻不知道怎麼玩嗎? 別擔心!目前正努力設計一款可以結合社交和規則書的app，它具有可愛的畫風，不失典雅的色調，讓你玩桌遊時，可以輕鬆愉快的玩!</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.row -->
-
         <!-- Features Section -->
         <h3 class="mt-2 mx-auto" id="contact">Contact me</h3>
         <div class="row mb-4" id="footer">
@@ -193,13 +190,12 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
     <!--Custom JavaScript -->
-    <script src="js/control.js"></script>
+    <script src="./js/control.js"></script>
 
 
 </body>
