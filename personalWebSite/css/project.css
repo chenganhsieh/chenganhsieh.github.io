@@ -1,0 +1,12 @@
+a.scrollPage {
+    text-decoration: none;
+}
+
+a.scrollPage:link,
+a.scrollPage:visited {
+    color: white
+}
+
+a.scrollPage:hover {
+    color: wheat
+}

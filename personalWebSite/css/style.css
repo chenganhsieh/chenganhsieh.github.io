@@ -43,6 +43,15 @@ header.masthead1 {
     background-size: cover;
 }
 
+header.masthead2 {
+    padding-top: 10rem;
+    padding-bottom: calc(15rem - 72px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
 header.masthead h1 {
     font-size: 2.25rem;
     text-shadow: 0.05em 0.05em #333;
