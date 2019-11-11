@@ -7,8 +7,9 @@
     * Bootstrap Carousel Slide
     * Bootstrap DropDown
     * Bootstrap NavBar
-    * Bootstrap 
+    * Bootstrap Button
     JS:
-    * 
+    * Control JS: Smooth scrolling using jQuery
 3. img：
-    * 
+    * img-fluid
+    * img-thumbnail
