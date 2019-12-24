@@ -204,7 +204,7 @@ function startMatch() {
                     }
                 } else {
                     chatDiv.setAttribute("hidden", "true");
-                    matchresult.setAttribute('hidden', 'true');
+                    // matchresult.setAttribute('hidden', 'true');
                     similarityHeader.setAttribute('hidden', 'true');
 
                 }
@@ -359,7 +359,7 @@ function authStateObserver(user) {
         chatDiv.setAttribute('hidden', 'true');
         similarityHeader.setAttribute('hidden', 'true');
         hintText.setAttribute('hidden', 'true');
-        matchresult.setAttribute('hidden', 'true');
+        //matchresult.setAttribute('hidden', 'true');
         barDiv.setAttribute('hidden', 'true');
         question = 0;
         // Show sign-in button.
@@ -541,10 +541,10 @@ const matchanswer = document.getElementById('matchanswer');
 const similarityHeader = document.getElementById('similarityHeader');
 const hintText = document.getElementById('hintText');
 
-const matchresult = document.getElementById('matchresult');
+//const matchresult = document.getElementById('matchresult');
 const user1pic = document.getElementById('user1-pic');
 const user2pic = document.getElementById('user2-pic');
-const leave = document.getElementById('leave');
+//const leave = document.getElementById('leave');
 const loginLayout = document.getElementById("loginLayout");
 
 // Saves message on form submit.
@@ -562,7 +562,7 @@ imageButtonElement.addEventListener('click', function(e) {
     mediaCaptureElement.click();
 });
 mediaCaptureElement.addEventListener('change', onMediaFileSelected);
-leave.addEventListener('click', leaveRoom);
+//leave.addEventListener('click', leaveRoom);
 
 // initialize Firebase
 initFirebaseAuth();
@@ -589,7 +589,7 @@ let state = {}
 
 function startGame() {
     questionElement.removeAttribute('hidden')
-    chatDiv.innerHTML = originChat;
+        //chatDiv.innerHTML = originChat;
     state = {}
     showTextNode(1)
 }
@@ -639,7 +639,7 @@ function selectOption(option) {
 
 function checkSimilarity() {
     similarityHeader.removeAttribute('hidden')
-    matchresult.removeAttribute('hidden')
+        //matchresult.removeAttribute('hidden')
 
 
     firebase.firestore().collection('users').doc(user1).get().then(function(doc) {
