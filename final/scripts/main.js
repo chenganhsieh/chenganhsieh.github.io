@@ -542,8 +542,8 @@ const similarityHeader = document.getElementById('similarityHeader');
 const hintText = document.getElementById('hintText');
 
 //const matchresult = document.getElementById('matchresult');
-const user1pic = document.getElementById('user1-pic');
-const user2pic = document.getElementById('user2-pic');
+//const user1pic = document.getElementById('user1-pic');
+//const user2pic = document.getElementById('user2-pic');
 //const leave = document.getElementById('leave');
 const loginLayout = document.getElementById("loginLayout");
 
@@ -642,12 +642,12 @@ function checkSimilarity() {
         //matchresult.removeAttribute('hidden')
 
 
-    firebase.firestore().collection('users').doc(user1).get().then(function(doc) {
-        user1pic.style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(doc.data().profilePicUrl) + ')'
-    })
-    firebase.firestore().collection('users').doc(user2).get().then(function(doc) {
-        user2pic.style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(doc.data().profilePicUrl) + ')'
-    })
+    // firebase.firestore().collection('users').doc(user1).get().then(function(doc) {
+    //     user1pic.style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(doc.data().profilePicUrl) + ')'
+    // })
+    // firebase.firestore().collection('users').doc(user2).get().then(function(doc) {
+    //     user2pic.style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(doc.data().profilePicUrl) + ')'
+    // })
     firebase.firestore().collection('match').doc(user1).get().then(function(doc) {
         if (doc.exists) {
 
