@@ -743,12 +743,18 @@ function saveUserOptionData(option) {
 }
 
 function leaveRoom() {
-    firebase.firestore().collection('rooms').doc(roomId).delete().then(function() {
-            console.log("Leave room successfully");
-        })
-        .catch(function(error) {
-            console.error('Unable to leave room', error);
-        });
+    saveMessage("已離開");
+    leave.innerHTML = "離開中..."
+    leave.setAttribute("disabled", "true");
+    setTimeout(function() {
+        firebase.firestore().collection('rooms').doc(roomId).delete().then(function() {
+                console.log("Leave room successfully");
+            })
+            .catch(function(error) {
+                console.error('Unable to leave room', error);
+            });
+
+    }, 1000);
 }
 
 
