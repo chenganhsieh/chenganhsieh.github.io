@@ -159,11 +159,11 @@ main,
     padding-right: 10px;
 }
 
-#user-container #user-pic {
+#user-container #user-pic #user1-pic #user2-pic {
     top: -3px;
     position: relative;
     display: inline-block;
-    background-image: url('/images/profile_placeholder.png');
+    background-image: url('final/images/profile_placeholder.png');
     background-repeat: no-repeat;
     width: 40px;
     height: 40px;
