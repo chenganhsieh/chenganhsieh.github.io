@@ -626,10 +626,19 @@ function selectOption(option) {
 
 function checkSimilarity() {
     similarityHeader.removeAttribute('hidden')
+    matchresult.removeAttribute('hidden')
+
+
+    firebase.firestore().collection('users').doc(user1).get().then(function(doc) {
+        user1pic.style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(doc.data().profilePicUrl) + ')'
+    })
+    firebase.firestore().collection('users').doc(user2).get().then(function(doc) {
+        user2pic.style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(doc.data().profilePicUrl) + ')'
+    })
     firebase.firestore().collection('match').doc(user1).get().then(function(doc) {
         if (doc.exists) {
-            matchresult.removeAttribute('hidden')
-            user1pic.style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(doc.data().profilePicUrl) + ')'
+
+
             var user1A = doc.data().one
             var user1B = doc.data().two
             var user1C = doc.data().three
@@ -638,7 +647,7 @@ function checkSimilarity() {
 
             firebase.firestore().collection('match').doc(user2).get().then(function(doc) {
                 if (doc.exists) {
-                    user2pic.style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(doc.data().profilePicUrl) + ')'
+
                     var user2A = doc.data().one
                     var user2B = doc.data().two
                     var user2C = doc.data().three
