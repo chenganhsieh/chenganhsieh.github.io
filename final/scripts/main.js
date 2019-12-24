@@ -341,7 +341,7 @@ function authStateObserver(user) {
 
         // Hide sign-in button.
         signInButtonElement.setAttribute('hidden', 'true');
-        loginLayout.setAttribute.setAttribute('hidden', 'true');
+        loginLayout.setAttribute('hidden', 'true');
         question = 0
         if (newUser == true) {
             saveUserInformation();
