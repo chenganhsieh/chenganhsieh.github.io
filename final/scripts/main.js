@@ -175,31 +175,38 @@ function startMatch() {
         hintText.innerHTML = "建立房間ing..."
         firebase.firestore().collection('players').doc(getUserUid())
             .onSnapshot(function(doc) {
-                if (doc.data().roomId != null) {
-                    roomId = doc.data().roomId
-                    console.log("room:" + roomId)
-                    loadingDiv.style.width = "75%";
-                    hintText.innerHTML = "等有緣人中...";
+                if (doc.exists) {
+                    if (doc.data().roomId != null) {
+                        roomId = doc.data().roomId
+                        console.log("room:" + roomId)
+                        loadingDiv.style.width = "75%";
+                        hintText.innerHTML = "等有緣人中...";
 
-                    firebase.firestore().collection('rooms').doc(roomId)
-                        .onSnapshot(function(doc) {
-                            if (doc.data().full == true) {
-                                loadingDiv.style.width = "100%";
-                                hintText.innerHTML = "配對成功~~"
-                                user1 = doc.data().players[0];
-                                user2 = doc.data().players[1];
-                                checkSimilarity();
-                                setTimeout(function() {
-                                    barDiv.setAttribute('hidden', 'true')
-                                    chatDiv.removeAttribute('hidden')
-                                    hintText.setAttribute('hidden', 'true');
-                                    // We load currently existing chat messages and listen to new ones.
-                                    loadMessages();
+                        firebase.firestore().collection('rooms').doc(roomId)
+                            .onSnapshot(function(doc) {
+                                if (doc.data().full == true) {
+                                    loadingDiv.style.width = "100%";
+                                    hintText.innerHTML = "配對成功~~"
+                                    user1 = doc.data().players[0];
+                                    user2 = doc.data().players[1];
+                                    checkSimilarity();
+                                    setTimeout(function() {
+                                        barDiv.setAttribute('hidden', 'true')
+                                        chatDiv.removeAttribute('hidden')
+                                        hintText.setAttribute('hidden', 'true');
+                                        // We load currently existing chat messages and listen to new ones.
+                                        loadMessages();
 
-                                }, 500);
+                                    }, 500);
 
-                            }
-                        });
+                                }
+                            });
+                    }
+                } else {
+                    chatDiv.setAttribute("hidden", "true");
+                    matchresult.setAttribute('hidden', 'true');
+                    similarityHeader.setAttribute('hidden', 'true');
+                    startGame();
                 }
             });
 
@@ -224,18 +231,9 @@ function checkMatchRoom() {
                                 user2 = doc.data().players[1];
                                 checkSimilarity();
                                 loadMessages();
-                                firebase.firestore().collection('players').doc(getUserUid()).onSnapshot(function(snapshot) {
-                                        snapshot.docChanges(function(change) {
-                                            if (change.type === "removed") {
-                                                chatDiv.setAttribute("hidden", "true");
-                                                matchresult.setAttribute('hidden', 'true');
-                                                similarityHeader.setAttribute('hidden', 'true');
-                                                startGame();
-                                            }
-                                        })
-                                    })
-                                    // firebase.firestore().collection('rooms').doc(roomId).onSnapshot(function(doc) {
-                                    //     if (doc.exists) {
+
+                                // firebase.firestore().collection('rooms').doc(roomId).onSnapshot(function(doc) {
+                                //     if (doc.exists) {
 
                                 //     } else {
                                 //         firebase.firestore().collection("players").doc(user1).delete();
