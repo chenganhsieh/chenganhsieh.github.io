@@ -167,6 +167,7 @@ function startMatch() {
     firebase.firestore().collection('players').doc(getUserUid()).set({
         id: getUserUid(),
         name: getUserName(),
+        profilePicUrl: getProfilePicUrl(),
         players: 2,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
     }).then(function() {
@@ -223,9 +224,23 @@ function checkMatchRoom() {
                                 user2 = doc.data().players[1];
                                 checkSimilarity();
                                 loadMessages();
+                                firebase.firestore().collection('rooms').doc(roomId).onSnapshot(function(doc) {
+                                    if (doc.exists) {
+
+                                    } else {
+                                        firebase.firestore().collection("players").doc(user1).delete();
+                                        firebase.firestore().collection("players").doc(user2).delete();
+                                        chatDiv.setAttribute("hidden", "true");
+                                        matchresult.setAttribute('hidden', 'true');
+                                        similarityHeader.setAttribute('hidden', 'true');
+                                        startGame();
+                                    }
+                                });
 
                             }
                         });
+
+
                 } else {
                     firebase.firestore().collection('players').doc(getUserUid()).delete().then(function() {
                         startGame()
@@ -298,6 +313,8 @@ function onMessageFormSubmit(e) {
     }
 }
 
+
+
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
 function authStateObserver(user) {
     if (user) { // User is signed in!
@@ -333,11 +350,14 @@ function authStateObserver(user) {
         chatDiv.setAttribute('hidden', 'true');
         similarityHeader.setAttribute('hidden', 'true');
         hintText.setAttribute('hidden', 'true');
+        matchresult.setAttribute('hidden', 'true');
+        barDiv.setAttribute('hidden', 'true');
         question = 0;
         // Show sign-in button.
         signInButtonElement.removeAttribute('hidden');
     }
 }
+
 
 // Returns true if user is signed-in. Otherwise false and displays a message.
 function checkSignedInWithMessage() {
@@ -460,6 +480,8 @@ function displayMessage(id, timestamp, name, text, picUrl, imageUrl) {
     messageInputElement.focus();
 }
 
+
+
 // Enables or disables the submit button depending on the values of the input
 // fields.
 function toggleButton() {
@@ -508,6 +530,11 @@ const matchanswer = document.getElementById('matchanswer');
 const similarityHeader = document.getElementById('similarityHeader');
 const hintText = document.getElementById('hintText');
 
+const matchresult = document.getElementById('matchresult');
+const user1pic = document.getElementById('user1-pic');
+const user2pic = document.getElementById('user2-pic');
+const leave = document.getElementById('leave');
+
 // Saves message on form submit.
 messageFormElement.addEventListener('submit', onMessageFormSubmit);
 signOutButtonElement.addEventListener('click', signOut);
@@ -523,6 +550,7 @@ imageButtonElement.addEventListener('click', function(e) {
     mediaCaptureElement.click();
 });
 mediaCaptureElement.addEventListener('change', onMediaFileSelected);
+leave.addEventListener('click', leaveRoom);
 
 // initialize Firebase
 initFirebaseAuth();
@@ -600,15 +628,17 @@ function checkSimilarity() {
     similarityHeader.removeAttribute('hidden')
     firebase.firestore().collection('match').doc(user1).get().then(function(doc) {
         if (doc.exists) {
-
+            matchresult.removeAttribute('hidden')
+            user1pic.style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(doc.data().profilePicUrl) + ')'
             var user1A = doc.data().one
             var user1B = doc.data().two
             var user1C = doc.data().three
             var user1D = doc.data().four
             var user1E = doc.data().five
+
             firebase.firestore().collection('match').doc(user2).get().then(function(doc) {
                 if (doc.exists) {
-
+                    user2pic.style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(doc.data().profilePicUrl) + ')'
                     var user2A = doc.data().one
                     var user2B = doc.data().two
                     var user2C = doc.data().three
@@ -701,6 +731,15 @@ function saveUserOptionData(option) {
         });
 
     }
+}
+
+function leaveRoom() {
+    firebase.firestore().collection('rooms').doc(roomId).delete().then(function() {
+            console.log("Leave room successfully");
+        })
+        .catch(function(error) {
+            console.error('Unable to leave room', error);
+        });
 }
 
 
