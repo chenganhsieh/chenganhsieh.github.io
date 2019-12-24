@@ -224,18 +224,28 @@ function checkMatchRoom() {
                                 user2 = doc.data().players[1];
                                 checkSimilarity();
                                 loadMessages();
-                                firebase.firestore().collection('rooms').doc(roomId).onSnapshot(function(doc) {
-                                    if (doc.exists) {
+                                firebase.firestore().collection('players').doc(getUserUid).onSnapshot(function(snapshot) {
+                                        snapshot.docChanges(function(change) {
+                                            if (change.type === "removed") {
+                                                chatDiv.setAttribute("hidden", "true");
+                                                matchresult.setAttribute('hidden', 'true');
+                                                similarityHeader.setAttribute('hidden', 'true');
+                                                startGame();
+                                            }
+                                        })
+                                    })
+                                    // firebase.firestore().collection('rooms').doc(roomId).onSnapshot(function(doc) {
+                                    //     if (doc.exists) {
 
-                                    } else {
-                                        firebase.firestore().collection("players").doc(user1).delete();
-                                        firebase.firestore().collection("players").doc(user2).delete();
-                                        chatDiv.setAttribute("hidden", "true");
-                                        matchresult.setAttribute('hidden', 'true');
-                                        similarityHeader.setAttribute('hidden', 'true');
-                                        startGame();
-                                    }
-                                });
+                                //     } else {
+                                //         firebase.firestore().collection("players").doc(user1).delete();
+                                //         firebase.firestore().collection("players").doc(user2).delete();
+                                //         chatDiv.setAttribute("hidden", "true");
+                                //         matchresult.setAttribute('hidden', 'true');
+                                //         similarityHeader.setAttribute('hidden', 'true');
+                                //         startGame();
+                                //     }
+                                // });
 
                             }
                         });
@@ -749,6 +759,10 @@ function leaveRoom() {
     setTimeout(function() {
         firebase.firestore().collection('rooms').doc(roomId).delete().then(function() {
                 console.log("Leave room successfully");
+                leave.innerHTML = "離開"
+                leave.setAttribute("disabled", "false");
+                firebase.firestore().collection('players').doc(user1).delete();
+                firebase.firestore().collection('players').doc(user2).delete();
             })
             .catch(function(error) {
                 console.error('Unable to leave room', error);
