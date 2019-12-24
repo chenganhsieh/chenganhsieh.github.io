@@ -29,7 +29,7 @@ var question5 = new Array("藍莓派", "紅梅派", "抹茶派", "乳酪派");
 // Signs-in Friendly Chat.
 function signIn() {
     var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function(result) {
+    firebase.auth().signInWithRedirect(provider).then(function(result) {
         if (result.additionalUserInfo.isNewUser == true) {
             newUser = true;
         }
