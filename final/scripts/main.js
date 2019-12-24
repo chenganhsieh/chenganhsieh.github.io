@@ -1,4 +1,21 @@
 'use strict';
+
+
+// Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyATJcXbIj2S6Zlp-CXHwHtvDUpJGrSHAf0",
+    authDomain: "webfinal-c4d48.firebaseapp.com",
+    databaseURL: "https://webfinal-c4d48.firebaseio.com",
+    projectId: "webfinal-c4d48",
+    storageBucket: "webfinal-c4d48.appspot.com",
+    messagingSenderId: "998073330583",
+    appId: "1:998073330583:web:c4c4aa9ee7ba4f9f5c32d2",
+    measurementId: "G-ZZW4DMTQKW"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
 var question = 0;
 var newUser = false;
 var roomId = "none";
