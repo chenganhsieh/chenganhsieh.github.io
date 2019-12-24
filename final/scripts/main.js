@@ -206,7 +206,7 @@ function startMatch() {
                     chatDiv.setAttribute("hidden", "true");
                     matchresult.setAttribute('hidden', 'true');
                     similarityHeader.setAttribute('hidden', 'true');
-                    startGame();
+
                 }
             });
 
@@ -341,6 +341,7 @@ function authStateObserver(user) {
 
         // Hide sign-in button.
         signInButtonElement.setAttribute('hidden', 'true');
+        loginLayout.setAttribute.setAttribute('hidden', 'true');
         question = 0
         if (newUser == true) {
             saveUserInformation();
@@ -363,6 +364,7 @@ function authStateObserver(user) {
         question = 0;
         // Show sign-in button.
         signInButtonElement.removeAttribute('hidden');
+        loginLayout.removeAttribute('hidden');
     }
 }
 
@@ -532,6 +534,7 @@ const questionDiv = document.getElementById('question')
 const loadingDiv = document.getElementById('loading')
 const barDiv = document.getElementById('bardiv');
 const chatDiv = document.getElementById('chatLayout');
+var originChat = chatDiv.innerHTML;
 const similarity = document.getElementById('similarity');
 const myanswer = document.getElementById('myanswer');
 const matchanswer = document.getElementById('matchanswer');
@@ -542,6 +545,7 @@ const matchresult = document.getElementById('matchresult');
 const user1pic = document.getElementById('user1-pic');
 const user2pic = document.getElementById('user2-pic');
 const leave = document.getElementById('leave');
+const loginLayout = document.getElementById("loginLayout");
 
 // Saves message on form submit.
 messageFormElement.addEventListener('submit', onMessageFormSubmit);
@@ -585,6 +589,7 @@ let state = {}
 
 function startGame() {
     questionElement.removeAttribute('hidden')
+    chatDiv.innerHTML = originChat;
     state = {}
     showTextNode(1)
 }
