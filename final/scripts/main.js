@@ -224,7 +224,7 @@ function checkMatchRoom() {
                                 user2 = doc.data().players[1];
                                 checkSimilarity();
                                 loadMessages();
-                                firebase.firestore().collection('players').doc(getUserUid).onSnapshot(function(snapshot) {
+                                firebase.firestore().collection('players').doc(getUserUid()).onSnapshot(function(snapshot) {
                                         snapshot.docChanges(function(change) {
                                             if (change.type === "removed") {
                                                 chatDiv.setAttribute("hidden", "true");
