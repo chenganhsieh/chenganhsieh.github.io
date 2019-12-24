@@ -164,6 +164,7 @@ function saveUserInformation() {
 
 function startMatch() {
     hintText.removeAttribute("hidden")
+    hintTextlayout.removeAttribute('hidden')
     firebase.firestore().collection('players').doc(getUserUid()).set({
         id: getUserUid(),
         name: getUserName(),
@@ -194,6 +195,7 @@ function startMatch() {
                                         barDiv.setAttribute('hidden', 'true')
                                         chatDiv.removeAttribute('hidden')
                                         hintText.setAttribute('hidden', 'true');
+                                        hintTextlayout.setAttribute('hidden', 'true');
                                         // We load currently existing chat messages and listen to new ones.
                                         loadMessages();
 
@@ -359,6 +361,7 @@ function authStateObserver(user) {
         chatDiv.setAttribute('hidden', 'true');
         similarityHeader.setAttribute('hidden', 'true');
         hintText.setAttribute('hidden', 'true');
+        hintTextlayout.setAttribute('hidden', 'true');
         //matchresult.setAttribute('hidden', 'true');
         barDiv.setAttribute('hidden', 'true');
         question = 0;
@@ -540,6 +543,7 @@ const myanswer = document.getElementById('myanswer');
 const matchanswer = document.getElementById('matchanswer');
 const similarityHeader = document.getElementById('similarityHeader');
 const hintText = document.getElementById('hintText');
+const hintTextlayout = document.getElementById('hintTextlayout');
 
 //const matchresult = document.getElementById('matchresult');
 //const user1pic = document.getElementById('user1-pic');
