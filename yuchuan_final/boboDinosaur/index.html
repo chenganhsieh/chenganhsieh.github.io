@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>抓波波</title>
+    <!-- jquery你需要的 -->
+    <script src="js/jquery-slim.min.js"></script>
+    <!-- bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light" id="nav-bar">
+        <a class="navbar-brand">BoBo</a>
+        <form class="form-inline">
+            <div id="user-pic">Score:</div>
+            <div id="user-score">0000</div>
+        </form>
+    </nav>
+    <div>
+        <div class="text-center" id="game_status_button">
+            <button id="start" name="singlebutton" class="btn btn-primary">Start Game</button>
+            <button id="restart" name="singlebutton" class="btn btn-primary">Restart</button>
+        </div>
+        <div id="sketch-holder">
+
+        </div>
+    </div>
+
+
+
+    <!-- p5是javascript的一個繪圖套件 -->
+    <script src="js/p5.js"></script>
+    <script src="js/p5.collide2d.min.js"></script>
+    <!-- 自己定義的js -->
+    <script src="js/avatar.js"></script>
+    <script src="js/money.js"></script>
+    <script src="js/girlfriend.js"></script>
+    <script src="js/sketch.js"></script>
+</body>
+
+</html>
