@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="pigoo833">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Gan prototype</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/cover.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/cropper.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Gan</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="#">Home</a>
+                </nav>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <div class="mt-3 mb-2">
+                <img id="image" src="./img/test.png">
+            </div>
+            <div class="mt-3 mb-2" id="result">
+
+            </div>
+            <p class="lead">
+                <button class="btn btn-lg btn-secondary" id="mask_button">
+                    Mask and Reconstruct 
+                </button>
+            </p>
+            <h1 class="cover-heading mt-3">Upload an image for gan</h1>
+            <p class="lead">You can upload an image and mask it. We will reconstruct this image!</p>
+            <p class="lead">
+                <label for="file-upload" class="btn btn-lg btn-secondary">
+                    Upload
+                </label>
+                <input hidden id="file-upload" type="file" accept="image/png, image/jpeg" />
+            </p>
+        </main>
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Gan designed by xxx <a href="#">LAB</a>, web designed by <a href="https://pigoo833.github.io/">@pigoo833</a>.</p>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="./js/jquery-slim.min.js"><\/script>')
+    </script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- user script -->
+    <script src="./js/cropper.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
