@@ -1,6 +1,3 @@
-var imageFile; //used to save temp image file
-
-//mask image
 function getMaskedCanvas(sourceCanvas, sourceImage, cropper) {
     var canvas = document.createElement('canvas');
     var context = canvas.getContext('2d');
@@ -28,27 +25,23 @@ function getMaskedCanvas(sourceCanvas, sourceImage, cropper) {
     return canvas;
 }
 
-//crop image 
-function cropImage() {
+window.addEventListener('DOMContentLoaded', function() {
     var image = document.getElementById('image');
+    var button = document.getElementById('button');
+    var result = document.getElementById('result');
     var croppable = false;
     var cropper = new Cropper(image, {
-        viewMode: 1,
-        movable: false,
-        rotatable: false,
-        scalable: false,
-        zoomable: false,
-        zoomOnTouch: false,
-        zoomOnWheel: false,
+        viewMode: 0,
         guides: true,
         center: true,
         highlight: true,
-        aspectRatio: 16 / 9,
+        cropBoxMovable: true,
+        cropBoxResizable: true,
         ready: function() {
             croppable = true;
         },
     });
-    var button = document.getElementById('mask_button');
+
     button.onclick = function() {
         var croppedCanvas;
         var maskedCanvas;
@@ -67,57 +60,7 @@ function cropImage() {
         // Show
         maskedImage = document.createElement('img');
         maskedImage.src = maskedCanvas.toDataURL();
-        newmaskImage = maskedCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-        console.log("==================")
-        console.log(newmaskImage)
-
         result.innerHTML = '';
         result.appendChild(maskedImage);
     };
-
-
-}
-
-
-//read user upload image
-function readURL(input) {
-    imageFile = input.files[0];
-
-    const validImageTypes = ['image/jpeg', 'image/png'];
-
-    if (input.files && input.files[0]) {
-        const file = input.files[0];
-        const fileType = file['type'];
-
-        if (input.files[0]) {}
-
-        if (!validImageTypes.includes(fileType)) {
-            alert("請選擇.jpg or png 圖檔");
-            return;
-        }
-
-        var reader = new FileReader();
-
-        reader.onload = function(e) {
-            document.getElementById('image').src = e.target.result
-            cropImage()
-                // $('#image').attr('src', e.target.result);
-        }
-        reader.readAsDataURL(input.files[0]); // convert to base64 string
-
-
-    }
-}
-
-
-function initApp() {
-    //select image
-    $("#file-upload").change(function() {
-        readURL(this);
-    });
-
-}
-
-window.onload = function() {
-    initApp();
-};
+});

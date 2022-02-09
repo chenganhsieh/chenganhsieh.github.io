@@ -67,10 +67,6 @@ function cropImage() {
         // Show
         maskedImage = document.createElement('img');
         maskedImage.src = maskedCanvas.toDataURL();
-        newmaskImage = maskedCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-        console.log("==================")
-        console.log(newmaskImage)
-
         result.innerHTML = '';
         result.appendChild(maskedImage);
     };
