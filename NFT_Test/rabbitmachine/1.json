@@ -1,0 +1,15 @@
+{
+    "name": "Rabbit x Machine Genesis 🐰🤖",
+    "description": "Let's go to the moon with cute rabbit. 🚀",
+    "image": "https://chenganhsieh.github.io/NFT-Test/rabbitmachine/rabbitmachine_1.png",
+    "external_url": "https://chenganhsieh.github.io/",
+    "attributes": [{
+            "trait_type": "Eyes",
+            "value": "Blue"
+        },
+        {
+            "trait_type": "Collection",
+            "value": "Genesis"
+        }
+    ]
+}
