@@ -33,6 +33,7 @@ h4,
 h5,
 h6 {
     font-family: "Raleway", sans-serif;
+    color: #3F4E52;
 }
 
 
@@ -670,7 +671,7 @@ section {
 .about .content h3 {
     font-weight: 700;
     font-size: 26px;
-    color: #6E8CA0;
+    color: #3F4E52;
 }
 
 .about .content p {
@@ -688,6 +689,7 @@ section {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
+    color: #3F4E52;
 }
 
 .about .content ul strong {
@@ -874,6 +876,19 @@ section {
     top: 0;
     background: #fff;
     border: 2px solid #D98080;
+}
+
+
+/*--------------------------------------------------------------
+# Papers
+--------------------------------------------------------------*/
+
+.papers p {
+    color: #3F4E52;
+}
+
+.papers li {
+    color: #3F4E52;
 }
 
 
